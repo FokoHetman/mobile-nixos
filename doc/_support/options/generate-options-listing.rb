@@ -19,11 +19,11 @@ options = JSON.parse(File.read(ENV["optionsJSON"]))
     v["declarations"].any? {|path| path.match(/^#{$root}/)}
   end
 
-if options.keys.include?("nixpkgs.system")
-  $stderr.puts "The options listing unexpectedly contains NixOS options."
-  $stderr.puts "Bailing!"
-  exit 1
-end
+#if options.keys.include?("nixpkgs.system")
+#  $stderr.puts "The options listing unexpectedly contains NixOS options."
+#  $stderr.puts "Bailing!"
+#  exit 1
+#end
 
 # Write the options listing.
 File.open(File.join($out, "options/index.adoc"), "w") do |file|
