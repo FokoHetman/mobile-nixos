@@ -4,10 +4,11 @@
 # These workarounds are only expected to be implemented for the *basic* build.
 # That is `nix-build ./default.nix`, without additional configuration.
 let
-  isCross =
+  isCross = false;
+  /*isCross =
     config.nixpkgs.crossSystem != null &&
     config.nixpkgs.localSystem.system != null &&
-    config.nixpkgs.crossSystem.system != config.nixpkgs.localSystem.system;
+    config.nixpkgs.crossSystem.system != config.nixpkgs.localSystem.system;*/
   nullPackage = pkgs.runCommand "null" {} ''
     mkdir -p $out
   '';
